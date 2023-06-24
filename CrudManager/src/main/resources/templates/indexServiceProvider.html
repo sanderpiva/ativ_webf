@@ -1,3 +1,8 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<div th:replace="cabecalho :: head"></div>
+
 <title>Crud Manager - Prestador</title>
 </head>
 <body>
@@ -26,7 +31,10 @@
 						<td th:text="${s.email}"></td>
 						<td th:text="${s.phone}"></td>
 						<td th:text="${s.role}"></td>
+						
+						<!--  
 						<td th:text="${s.Company.getName()==s.getId()}"></td>
+						-->
 						<td></td>
 						<td><a th:href="@{/serviceProviders/update{id}(id=${s.id})}" class="btn btn-primary">Alterar</a> 
 						

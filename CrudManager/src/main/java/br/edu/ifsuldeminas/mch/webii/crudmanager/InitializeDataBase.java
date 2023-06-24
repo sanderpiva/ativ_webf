@@ -55,7 +55,9 @@ public class InitializeDataBase implements CommandLineRunner  {
 	//isso é bom
 	@Autowired
 	private UserRepository userRepository;
+	@Autowired
 	private CompanyRepository companyRepository;
+	@Autowired
 	private ServiceProviderRepository serviceProviderRepository;
 	
 	@Override

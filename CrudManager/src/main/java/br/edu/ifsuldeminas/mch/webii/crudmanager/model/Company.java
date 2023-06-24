@@ -17,7 +17,7 @@ public class Company {
 	private String cnpj;
 	private String address;
 	private String phone;
-	private ServiceProvider serviceProvider;
+	//private ServiceProvider serviceProvider;
 	
 	public Company() {
 		setName("");
@@ -76,13 +76,13 @@ public class Company {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
+	/*
 	public ServiceProvider getServiceProvider() {
 		return serviceProvider;
 	}
 
 	public void setServiceProvider(ServiceProvider serviceProvider) {
 		this.serviceProvider = serviceProvider;
-	}
+	}*/
 	
 }

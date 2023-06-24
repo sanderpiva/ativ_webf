@@ -19,7 +19,7 @@ public class ServiceProvider {
 	private String email;
 	private String phone;
 	private String role;
-	private Company company;
+	//private Company company;
 	
 	public ServiceProvider() {
 		setName("");
@@ -78,14 +78,14 @@ public class ServiceProvider {
 	public void setRole(String role) {
 		this.role = role;
 	}
-
+	/*
 	public Company getCompany() {
 		return company;
 	}
 
 	public void setCompany(Company company) {
 		this.company = company;
-	}
+	}*/
 		
 
 }
