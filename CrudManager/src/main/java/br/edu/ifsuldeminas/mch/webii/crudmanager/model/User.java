@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -47,6 +48,18 @@ public class User {
 		setName("");
 		setEmail("");
 		setGender("");
+	}
+	
+	@OneToOne(optional=false)
+	private ServiceProvider serviceProvider;
+	
+	
+	public ServiceProvider getServiceProvider() {
+		return serviceProvider;
+	}
+
+	public void setServiceProvider(ServiceProvider serviceProvider) {
+		this.serviceProvider = serviceProvider;
 	}
 
 	public Integer getId() {

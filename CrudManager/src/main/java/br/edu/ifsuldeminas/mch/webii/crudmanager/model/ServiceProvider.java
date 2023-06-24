@@ -4,11 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "prestadores")
+@Table(name = "prestadoras")
 public class ServiceProvider {
 	
 	
@@ -18,14 +19,14 @@ public class ServiceProvider {
 	private String name;
 	private String email;
 	private String phone;
-	private String role;
-	//private Company company;
+	private String address;
+	
 	
 	public ServiceProvider() {
 		setName("");
 		setEmail("");
 		setPhone("");
-		setRole("");
+		setAddress("");
 		
 	}
 	
@@ -35,7 +36,7 @@ public class ServiceProvider {
 		setName("");
 		setEmail("");
 		setPhone("");
-		setRole("");
+		setAddress("");
 		
 	}
 
@@ -70,22 +71,14 @@ public class ServiceProvider {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
-	public String getRole() {
-		return role;
+	
+	public String getAddress() {
+		return address;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	/*
-	public Company getCompany() {
-		return company;
-	}
-
-	public void setCompany(Company company) {
-		this.company = company;
-	}*/
-		
-
+	
+			
 }

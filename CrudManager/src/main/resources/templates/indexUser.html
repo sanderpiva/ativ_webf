@@ -38,7 +38,7 @@ e incluí-los ou substituí-los em outros templates conforme necessário.
 						<th>Nome</th>
 						<th>Email</th>
 						<th>Genero</th>
-						<th>Endereco</th>
+						<th>Prestadora de servicos vinculada</th>
 						<th>Acoes</th>
 					</tr>
 				</thead>
@@ -47,6 +47,7 @@ e incluí-los ou substituí-los em outros templates conforme necessário.
 						<td th:text="${u.name}"></td>
 						<td th:text="${u.email}"></td>
 						<td th:text="${u.gender}"></td>
+						<td th:text="${u.serviceProvider.name}"></td>
 						<td></td>
 						<td><a th:href="@{/users/update{id}(id=${u.id})}" class="btn btn-primary">Alterar</a> 
 						
