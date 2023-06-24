@@ -98,12 +98,18 @@ public class InitializeDataBase implements CommandLineRunner  {
 		c.setName("Unilever");
 		c.setCnpj("00001/200");
 		c.setAddress("Rua 9");
+		c.setPhone("(35) 3295-0010");
+		
 		//c.setServiceProvider("Pedro");
 		Company c2 = new Company();
 		c2.setName("Rodia");
 		c2.setCnpj("00001/280");
 		c2.setAddress("Rua 4");
+		c2.setPhone("(35) 3295-0015");
 		
+		
+		companyRepository.save(c);
+		companyRepository.save(c2);
 
 		List<Company> companies = companyRepository.findAll();
 		
@@ -118,16 +124,21 @@ public class InitializeDataBase implements CommandLineRunner  {
 		
 
 		ServiceProvider s = new ServiceProvider();
-		s.setName("Pedro");
+		s.setName("Pedro Paixao");
 		s.setEmail("p@gmail.com");
-		s.setRole("Limpeza");
+		s.setPhone("(35) 3295-0000");
+		s.setRole("Aux Limpeza");
 		//c.setServiceProvider("Pedro");
 		ServiceProvider s2 = new ServiceProvider();
-		s.setName("Lia");
-		s.setEmail("lia@gmail.com");
-		s.setRole("jardim");
+		s2.setName("Lia");
+		s2.setEmail("lia@gmail.com");
+		s2.setPhone("(35) 3295-0004");
+		s2.setRole("Aux Jardim");
 		
-
+		serviceProviderRepository.save(s);
+		serviceProviderRepository.save(s2);
+		
+		
 		List<ServiceProvider> serviceProvider = serviceProviderRepository.findAll();
 		
 		for (ServiceProvider service:serviceProvider) {
