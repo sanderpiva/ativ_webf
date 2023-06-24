@@ -13,7 +13,7 @@
 		<h2>Empresa</h2>
 		
 		
-		<form action="#" th:action="@{/companies/new}" th:object="${companies}" method="POST">
+		<form action="#" th:action="@{/companies/new}" th:object="${company}" method="POST">
 			<input type="hidden" th:field="*{id}" id="id">
 			
 			<input type="text" th:field="*{name}" placeholder="Nome" class="form-control mb-4 col-4"> 
