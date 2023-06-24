@@ -29,7 +29,7 @@ public class UserController {
 		
 		//o retorno de um metodo (spring) eh a pagina que é redirecionada
 		//eh um .html
-		return "index";
+		return "indexUser";
 	}
 	
 	@GetMapping("/users/form")

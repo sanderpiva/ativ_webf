@@ -6,7 +6,7 @@
 <title>Crud Manager - Empresas</title>
 </head>
 
-<body>
+<body style="background: #9ff5b2">
 
 	<div class="container my-2">
 
@@ -15,6 +15,8 @@
 			<div>
 				<a th:href="@{/companies/form}" th:object="${company}" class="btn btn-primary btn-sm mb-3 float-right"> Adicionar
 					Empresa </a>
+				<a style="margin-right:20px" th:href="@{/}" class="btn btn-primary btn-sm mb-3 float-right"> Home
+					Page </a>	
 			</div>
 			<table class="table table-striped table-responsive-md">
 				<thead>
@@ -24,6 +26,7 @@
 						<th>Endereco</th>
 						<th>Telefone</th>
 						<th>Prestador</th>
+						<th>Acoes</th>
 					</tr>
 				</thead>
 				<tbody>
