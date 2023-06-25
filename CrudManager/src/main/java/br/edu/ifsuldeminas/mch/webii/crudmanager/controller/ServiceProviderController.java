@@ -3,6 +3,8 @@ package br.edu.ifsuldeminas.mch.webii.crudmanager.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +15,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import br.edu.ifsuldeminas.mch.webii.crudmanager.model.ServiceProvider;
-import br.edu.ifsuldeminas.mch.webii.crudmanager.model.User;
 import br.edu.ifsuldeminas.mch.webii.crudmanager.model.dao.CompanyRepository;
 import br.edu.ifsuldeminas.mch.webii.crudmanager.model.dao.ServiceProviderRepository;
 
@@ -41,7 +42,7 @@ public class ServiceProviderController {
 		return "serviceProvider_form";
 	}
 	
-
+	
 	@PostMapping("/serviceProviders/new")
 	public String serviceProviderNew(@ModelAttribute ServiceProvider serviceProvider) {
 		

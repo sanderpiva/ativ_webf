@@ -63,36 +63,7 @@ public class InitializeDataBase implements CommandLineRunner  {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-			
-		Company c = new Company();
-		c.setName("Unilever");
-		c.setCnpj("00001/200");
-		c.setAddress("Rua 9");
-		c.setPhone("(35) 3295-0010");
-		//c.setServiceProvider(null);
-		//c.setServiceProvider("Pedro");
-		Company c2 = new Company();
-		c2.setName("Rodia");
-		c2.setCnpj("00001/280");
-		c2.setAddress("Rua 4");
-		c2.setPhone("(35) 3295-0015");
-		//c2.setServiceProvider(null);
-		
-		companyRepository.save(c);
-		companyRepository.save(c2);
-
-		List<Company> companies = companyRepository.findAll();
-		
-		for (Company company:companies) {
-			
-			System.err.println(company.getName());
-			System.err.println(company.getCnpj());
-			System.err.println(company.getAddress());
-			System.err.println(company.getPhone());
-			//empresa vinculada?
-		}
-
-			
+						
 		ServiceProvider s = new ServiceProvider();
 		s.setName("Pedro Limpezas Ltda");
 		s.setEmail("p@gmail.com");
@@ -104,6 +75,10 @@ public class InitializeDataBase implements CommandLineRunner  {
 		s2.setEmail("lia@gmail.com");
 		s2.setPhone("(35) 3295-0004");
 		s2.setAddress("Rua 52");
+		
+		//s.setServiceProvider(c);
+		//s2.setServiceProvider(c2);
+		
 		
 		serviceProviderRepository.save(s);
 		serviceProviderRepository.save(s2);
@@ -146,6 +121,37 @@ public class InitializeDataBase implements CommandLineRunner  {
 			System.err.println(user.getName());
 			System.err.println(user.getEmail());
 			System.err.println(user.getGender());
+		}
+		
+		Company c = new Company();
+		c.setName("Unilever");
+		c.setCnpj("00001/200");
+		c.setAddress("Rua 9");
+		c.setPhone("(35) 3295-0010");
+		//c.setServiceProvider(null);
+		//c.setServiceProvider("Pedro");
+		Company c2 = new Company();
+		c2.setName("Rodia");
+		c2.setCnpj("00001/280");
+		c2.setAddress("Rua 4");
+		c2.setPhone("(35) 3295-0015");
+		//c2.setServiceProvider(null);
+		
+		c.setServiceProvider(s);
+		c2.setServiceProvider(s2);
+		
+		companyRepository.save(c);
+		companyRepository.save(c2);
+
+		List<Company> companies = companyRepository.findAll();
+		
+		for (Company company:companies) {
+			
+			System.err.println(company.getName());
+			System.err.println(company.getCnpj());
+			System.err.println(company.getAddress());
+			System.err.println(company.getPhone());
+			//empresa vinculada?
 		}
 				
 	}
