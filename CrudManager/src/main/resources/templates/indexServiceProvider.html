@@ -24,6 +24,7 @@
 						<th>Email</th>
 						<th>Telefone</th>
 						<th>Endereco</th>
+						<th>Empresa cliente</th>
 						<th>Acoes</th>
 					</tr>
 				</thead>
@@ -33,6 +34,7 @@
 						<td th:text="${s.email}"></td>
 						<td th:text="${s.phone}"></td>
 						<td th:text="${s.address}"></td>
+						<td th:text="${s.company.name}"></td>
 						
 						<td></td>
 						<td><a th:href="@{/serviceProviders/update{id}(id=${s.id})}" class="btn btn-primary">Alterar</a> 
