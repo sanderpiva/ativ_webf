@@ -4,6 +4,8 @@ package br.edu.ifsuldeminas.mch.webii.crudmanager.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,7 +48,8 @@ public class UserController {
 		
 
 	@PostMapping("/users/new")
-	public String userNew(@ModelAttribute User user, 
+	public String userNew(@Valid
+			@ModelAttribute User user, 
 			BindingResult bidinBindingResult) {
 		
 		if(bidinBindingResult.hasErrors()) {
