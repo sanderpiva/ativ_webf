@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
 
 
 /*
@@ -31,8 +34,12 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	@NotBlank(message = "nome não pode estar vazio")
 	private String name;
+	@NotBlank(message = "email não pode estar vazio")
+	@Email(message="email invalido")
 	private String email;
+	@NotBlank(message = "genero não pode estar vazio")
 	private String gender;
 	
 	public User() {

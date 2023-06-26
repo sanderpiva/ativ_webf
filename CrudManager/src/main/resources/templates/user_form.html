@@ -16,10 +16,19 @@
 		<form action="#" th:action="@{/users/new}" th:object="${user}" method="POST">
 			<input type="hidden" th:field="*{id}" id="id">
 			
+			<span th:if="${#fields.hasErrors('name')}"
+			th:errors="*{name}" class="text-danger">
+			</span>
 			<input type="text" th:field="*{name}" placeholder="Nome" class="form-control mb-4 col-4"> 
 			
+			<span th:if="${#fields.hasErrors('email')}"
+			th:errors="*{email}" class="text-danger">
+			</span>
 			<input type="text" th:field="*{email}" placeholder="Email" class="form-control mb-4 col-4">
 			
+			<span th:if="${#fields.hasErrors('gender')}"
+			th:errors="*{gender}" class="text-danger">
+			</span>
 			<input type="text" th:field="*{gender}" placeholder="Genero" class="form-control mb-4 col-4">
 			
 			<button type="submit" class="btn btn-info col-2">Salvar</button>
