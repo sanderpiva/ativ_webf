@@ -4,12 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-
-
 
 
 /*
@@ -36,12 +31,8 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	@NotBlank(message="Nome não pode estar vazio")
 	private String name;
-	@NotBlank(message="Email não pode estar vazio")
-	@Email(message="Email invalido")
 	private String email;
-	@NotBlank(message="Genero não pode estar vazio")
 	private String gender;
 	
 	public User() {
@@ -56,18 +47,6 @@ public class User {
 		setName("");
 		setEmail("");
 		setGender("");
-	}
-	
-	@OneToOne(optional=false)
-	private ServiceProvider serviceProvider;
-	
-	
-	public ServiceProvider getServiceProvider() {
-		return serviceProvider;
-	}
-
-	public void setServiceProvider(ServiceProvider serviceProvider) {
-		this.serviceProvider = serviceProvider;
 	}
 
 	public Integer getId() {

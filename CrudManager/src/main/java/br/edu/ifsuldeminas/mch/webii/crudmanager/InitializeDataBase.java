@@ -63,21 +63,40 @@ public class InitializeDataBase implements CommandLineRunner  {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
+		User emerson = new User();
+		emerson.setName("Emerson");
+		emerson.setEmail("emerson@gmail.com");
+		emerson.setGender("M");
+		
+		User luiza = new User();
+		luiza.setName("Luiza");
+		luiza.setEmail("lu@gmail.com");
+		luiza.setGender("F");	
 			
+		userRepository.save(emerson);
+		userRepository.save(luiza);
+		
+		List<User> users = userRepository.findAll();
+		
+		for (User user:users) {
+			
+			System.err.println(user.getName());
+			System.err.println(user.getEmail());
+			System.err.println(user.getGender());
+		}
+		
 		Company c = new Company();
 		c.setName("Unilever");
 		c.setCnpj("00001/200");
 		c.setAddress("Rua 9");
 		c.setPhone("(35) 3295-0010");
-		//c.setServiceProvider(null);
-		//c.setServiceProvider("Pedro");
+		
 		Company c2 = new Company();
 		c2.setName("Rodia");
 		c2.setCnpj("00001/280");
 		c2.setAddress("Rua 4");
 		c2.setPhone("(35) 3295-0015");
-		//c2.setServiceProvider(null);
-		
+			
 		companyRepository.save(c);
 		companyRepository.save(c2);
 
@@ -91,22 +110,18 @@ public class InitializeDataBase implements CommandLineRunner  {
 			System.err.println(company.getPhone());
 			//empresa vinculada?
 		}
+		
 
-			
 		ServiceProvider s = new ServiceProvider();
-		s.setName("Pedro Limpezas Ltda");
+		s.setName("Pedro Jardinagem LTDA");
 		s.setEmail("p@gmail.com");
 		s.setPhone("(35) 3295-0000");
-		s.setAddress("Rua 12");
-		
+		s.setAddress("R 27");
 		ServiceProvider s2 = new ServiceProvider();
-		s2.setName("Lia Jardinagens Ltda");
+		s2.setName("Lia Designs e Interiores");
 		s2.setEmail("lia@gmail.com");
 		s2.setPhone("(35) 3295-0004");
-		s2.setAddress("Rua 52");
-		
-		s.setCompany(c);
-		s2.setCompany(c2);
+		s2.setAddress("R 56");
 		
 		serviceProviderRepository.save(s);
 		serviceProviderRepository.save(s2);
@@ -122,35 +137,7 @@ public class InitializeDataBase implements CommandLineRunner  {
 			System.err.println(service.getAddress());
 			//empresa vinculada?
 		}
-			
-		User emerson = new User();
-		emerson.setName("Emerson");
-		emerson.setEmail("emerson@gmail.com");
-		emerson.setGender("M");
-		
-		User luiza = new User();
-		luiza.setName("Luiza");
-		luiza.setEmail("lu@gmail.com");
-		luiza.setGender("F");	
-		
-		emerson.setServiceProvider(s);
-		luiza.setServiceProvider(s2);
-		
-		userRepository.save(emerson);
-		userRepository.save(luiza);
-		
-		//userRepository.delete(emerson);
-		//userRepository.findAll();
-		
-		List<User> users = userRepository.findAll();
-		
-		for (User user:users) {
-			
-			System.err.println(user.getName());
-			System.err.println(user.getEmail());
-			System.err.println(user.getGender());
-		}
-				
+
 	}
 	
 }

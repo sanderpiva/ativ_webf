@@ -3,17 +3,17 @@
 <head>
 <div th:replace="cabecalho :: head"></div>
 
-<title>Crud Manager - Prestadoras de serviços</title>
+<title>Crud Manager - Prestadora de Servico</title>
 </head>
-<body>
+<body style="background: #9ff5b2">
 
 	<div class="container my-2">
 
 		<div class="container my-2">
-			<h1>Prestadoras de Servico</h1>
+			<h1>Prestadora de Servico</h1>
 			<div>
 				<a th:href="@{/serviceProviders/form}" th:object="${serviceProvider}" class="btn btn-primary btn-sm mb-3 float-right"> Adicionar
-					Prestadora de Servico</a>
+					Prestadora de Servico </a>
 				<a style="margin-right:20px" th:href="@{/}" class="btn btn-primary btn-sm mb-3 float-right"> Home
 					Page </a>	
 			</div>
@@ -34,8 +34,10 @@
 						<td th:text="${s.email}"></td>
 						<td th:text="${s.phone}"></td>
 						<td th:text="${s.address}"></td>
-						<td th:text="${s.company.name}"></td>
 						
+						<!--  
+						<td th:text="${s.Company.getName()==s.getId()}"></td>
+						-->
 						<td></td>
 						<td><a th:href="@{/serviceProviders/update{id}(id=${s.id})}" class="btn btn-primary">Alterar</a> 
 						
