@@ -5,7 +5,7 @@
 <head>
 <div th:replace="cabecalho :: head"></div>
 
-	<title>Crud Manager - Prestadoras de Servico</title>
+	<title>Crud Manager - Usuário</title>
 </head>
 
 <body>
@@ -22,14 +22,18 @@
 			
 			<input type="text" th:field="*{phone}" placeholder="Telefone" class="form-control mb-4 col-4">
 			
-			<input type="text" th:field="*{address}" placeholder="Endereco" class="form-control mb-4 col-4">
+			<input type="text" th:field="*{address}" placeholder="Endereco" class="form-control mb-4 col-4">	
+			
 			<!--  
-			<input type="text" th:field="*{company}" placeholder="Empresa cliente" class="form-control mb-4 col-4">
+			<input type="hidden" th:field="*{company.id}" id="id">
+			
+			<input type="text" th:field="*{company.name}" placeholder="Empresa cliente" class="form-control mb-4 col-4">	
+			
 			-->
 			<button type="submit" class="btn btn-info col-2">Salvar</button>
 		</form>
 		<hr>
-		<a th:href="@{/serviceProviders}">Prestadoras de Servico</a>
+		<a th:href="@{/serviceProviders}">Prestadoras de servico</a>
 	</div>
 </body>
 </html>

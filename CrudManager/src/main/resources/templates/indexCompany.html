@@ -6,7 +6,7 @@
 <title>Crud Manager - Empresas</title>
 </head>
 
-<body style="background: #9ff5b2">
+<body>
 
 	<div class="container my-2">
 
@@ -25,7 +25,7 @@
 						<th>CNPJ</th>
 						<th>Endereco</th>
 						<th>Telefone</th>
-						<th>Prestador</th>
+						<th>Prestadora</th>
 						<th>Acoes</th>
 					</tr>
 				</thead>
@@ -35,10 +35,9 @@
 						<td th:text="${c.cnpj}"></td>
 						<td th:text="${c.address}"></td>
 						<td th:text="${c.phone}"></td>
-						
+						<td th:text="${c.serviceProvider.name}"></td>
 						<!--  
 						<td th:text="${c.ServiceProvider.getName()==c.getId()}"></td>
-						
 						-->
 						<td></td>
 						<td><a th:href="@{/companies/update{id}(id=${c.id})}" class="btn btn-primary">Alterar</a> 

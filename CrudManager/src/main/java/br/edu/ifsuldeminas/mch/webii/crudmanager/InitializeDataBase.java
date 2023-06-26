@@ -63,6 +63,34 @@ public class InitializeDataBase implements CommandLineRunner  {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
+						
+		ServiceProvider s = new ServiceProvider();
+		s.setName("Pedro Limpezas Ltda");
+		s.setEmail("p@gmail.com");
+		s.setPhone("(35) 3295-0000");
+		s.setAddress("Rua 12");
+		
+		ServiceProvider s2 = new ServiceProvider();
+		s2.setName("Lia Jardinagens Ltda");
+		s2.setEmail("lia@gmail.com");
+		s2.setPhone("(35) 3295-0004");
+		s2.setAddress("Rua 52");
+				
+		serviceProviderRepository.save(s);
+		serviceProviderRepository.save(s2);
+		
+		
+		List<ServiceProvider> serviceProvider = serviceProviderRepository.findAll();
+		
+		for (ServiceProvider service:serviceProvider) {
+			
+			System.err.println(service.getName());
+			System.err.println(service.getEmail());
+			System.err.println(service.getPhone());
+			System.err.println(service.getAddress());
+			//empresa vinculada?
+		}
+			
 		User emerson = new User();
 		emerson.setName("Emerson");
 		emerson.setEmail("emerson@gmail.com");
@@ -72,9 +100,10 @@ public class InitializeDataBase implements CommandLineRunner  {
 		luiza.setName("Luiza");
 		luiza.setEmail("lu@gmail.com");
 		luiza.setGender("F");	
-			
+		
 		userRepository.save(emerson);
 		userRepository.save(luiza);
+		
 		
 		List<User> users = userRepository.findAll();
 		
@@ -91,12 +120,17 @@ public class InitializeDataBase implements CommandLineRunner  {
 		c.setAddress("Rua 9");
 		c.setPhone("(35) 3295-0010");
 		
+		
 		Company c2 = new Company();
 		c2.setName("Rodia");
 		c2.setCnpj("00001/280");
 		c2.setAddress("Rua 4");
 		c2.setPhone("(35) 3295-0015");
-			
+		//c2.setServiceProvider(null);
+		
+		c.setServiceProvider(s);
+		c2.setServiceProvider(s2);
+		
 		companyRepository.save(c);
 		companyRepository.save(c2);
 
@@ -110,34 +144,7 @@ public class InitializeDataBase implements CommandLineRunner  {
 			System.err.println(company.getPhone());
 			//empresa vinculada?
 		}
-		
-
-		ServiceProvider s = new ServiceProvider();
-		s.setName("Pedro Jardinagem LTDA");
-		s.setEmail("p@gmail.com");
-		s.setPhone("(35) 3295-0000");
-		s.setAddress("R 27");
-		ServiceProvider s2 = new ServiceProvider();
-		s2.setName("Lia Designs e Interiores");
-		s2.setEmail("lia@gmail.com");
-		s2.setPhone("(35) 3295-0004");
-		s2.setAddress("R 56");
-		
-		serviceProviderRepository.save(s);
-		serviceProviderRepository.save(s2);
-		
-		
-		List<ServiceProvider> serviceProvider = serviceProviderRepository.findAll();
-		
-		for (ServiceProvider service:serviceProvider) {
-			
-			System.err.println(service.getName());
-			System.err.println(service.getEmail());
-			System.err.println(service.getPhone());
-			System.err.println(service.getAddress());
-			//empresa vinculada?
-		}
-
+				
 	}
 	
 }
