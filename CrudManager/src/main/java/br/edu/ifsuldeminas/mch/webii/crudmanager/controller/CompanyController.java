@@ -3,6 +3,10 @@ package br.edu.ifsuldeminas.mch.webii.crudmanager.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -52,7 +56,7 @@ public class CompanyController {
 	
 	
 	@PostMapping("/companies/new")
-	public String companyNew(
+	public String companyNew(@Valid
 			@ModelAttribute Company company, 
 			BindingResult bidinBindingResult, 
 			@RequestParam("spId")int id) {

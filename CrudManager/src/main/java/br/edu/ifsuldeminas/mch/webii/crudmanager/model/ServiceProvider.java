@@ -4,8 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 
 @Entity
@@ -16,9 +17,16 @@ public class ServiceProvider {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	
+	@NotBlank(message = "nome não pode estar vazio")
 	private String name;
+	
+	@NotBlank(message = "email não pode estar vazio")
+	@Email(message = "email invalido")
 	private String email;
+	@NotBlank(message = "phone não pode estar vazio")
 	private String phone;
+	@NotBlank(message = "endereco não pode estar vazio")
 	private String address;
 	
 	

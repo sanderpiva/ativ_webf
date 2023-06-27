@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "empresas")
@@ -14,11 +15,14 @@ public class Company {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	@NotBlank(message = "nome não pode estar vazio")
 	private String name;
+	@NotBlank(message = "cnpj não pode estar vazio")
 	private String cnpj;
+	@NotBlank(message = "endereco não pode estar vazio")
 	private String address;
+	@NotBlank(message = "telefone não pode estar vazio")
 	private String phone;
-	
 	
 	@OneToOne(optional=false)
 	private ServiceProvider serviceProvider;
