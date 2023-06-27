@@ -75,9 +75,16 @@ public class InitializeDataBase implements CommandLineRunner  {
 		s2.setEmail("lia@gmail.com");
 		s2.setPhone("(35) 3295-0004");
 		s2.setAddress("Rua 52");
-				
+		
+		ServiceProvider s3 = new ServiceProvider();
+		s3.setName("Liana Jardinagens Ltda");
+		s3.setEmail("lia@gmail.com");
+		s3.setPhone("(35) 3295-0004");
+		s3.setAddress("Rua 52");
+		
 		serviceProviderRepository.save(s);
 		serviceProviderRepository.save(s2);
+		serviceProviderRepository.save(s3);
 		
 		
 		List<ServiceProvider> serviceProvider = serviceProviderRepository.findAll();

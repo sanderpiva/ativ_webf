@@ -23,11 +23,14 @@
 			<input type="text" th:field="*{address}" placeholder="Endereco" class="form-control mb-4 col-4">
 			
 			<input type="text" th:field="*{phone}" placeholder="Telefone" class="form-control mb-4 col-4">
-			
-			<input type="hidden" th:field="*{serviceProvider.id}" id="id">
-			 
-			<input type="text" th:field="*{serviceProvider.name}" placeholder="Nome da Prestadora" class="form-control mb-4 col-4">	
-			
+			<!-- 
+			<input type="text" th:field="*{serviceProvider.name}" placeholder="Cadastro Novo, não insira Prestadora" class="form-control mb-4 col-4">
+			-->
+			<select class="form-control mb-4 col-4" id="spId" name="spId">
+    			<option value="0">Selecione uma prestadora</option>
+    			<option th:each="sp : ${serviceProviders}" th:value="${sp.id}" th:text="${sp.name}"></option>
+			</select>
+					
 			<button type="submit" class="btn btn-info col-2">Salvar</button>
 		</form>
 		<hr>

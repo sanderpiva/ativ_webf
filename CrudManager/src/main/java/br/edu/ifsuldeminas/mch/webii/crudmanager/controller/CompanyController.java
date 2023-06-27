@@ -3,8 +3,6 @@ package br.edu.ifsuldeminas.mch.webii.crudmanager.controller;
 import java.util.List;
 import java.util.Optional;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import br.edu.ifsuldeminas.mch.webii.crudmanager.model.Company;
 import br.edu.ifsuldeminas.mch.webii.crudmanager.model.ServiceProvider;
@@ -26,6 +25,10 @@ public class CompanyController {
 	@Autowired
 	private CompanyRepository companyRepository;
 	
+	@Autowired
+	private ServiceProviderRepository serviceProviderRepository;
+	
+	
 	@GetMapping("/companies")
 	public String empresas(Model model) {
 		
@@ -38,26 +41,29 @@ public class CompanyController {
 	}
 	
 	@GetMapping("/companies/form")
-	public String companiesForm(@ModelAttribute("company")  Company company) {
+	public String companiesForm(@ModelAttribute("company")  Company company, Model model) {
+		
+		List<ServiceProvider> serviceProviders = serviceProviderRepository.findAll();
+		model.addAttribute("serviceProviders", serviceProviders);
+		
 		
 		return "company_form";
 	}
-	
-	@Autowired
-	private ServiceProviderRepository serviceProviderRepository;
 	
 	
 	@PostMapping("/companies/new")
 	public String companyNew(
 			@ModelAttribute Company company, 
-			BindingResult bidinBindingResult) {
+			BindingResult bidinBindingResult, 
+			@RequestParam("spId")int id) {
 		
 		if(bidinBindingResult.hasErrors()) {
 			
 			return "company_form";
 		}
 		
-		serviceProviderRepository.save(company.getServiceProvider());
+		Optional<ServiceProvider> sp = serviceProviderRepository.findById(id);
+		company.setServiceProvider(sp.get());
 		companyRepository.save(company);
 		
 		return "redirect:/companies";
