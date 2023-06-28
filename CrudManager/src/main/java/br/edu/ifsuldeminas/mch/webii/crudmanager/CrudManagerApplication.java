@@ -10,5 +10,3 @@ public class CrudManagerApplication {
 		SpringApplication.run(CrudManagerApplication.class, args);
 	}
 }
-
-//MVC: toda requisicao que é feita em um mecanismo de rotas que bate em um controlador

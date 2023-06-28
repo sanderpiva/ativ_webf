@@ -1,18 +1,5 @@
 <!DOCTYPE html>
 
-<!-- 
-
-A expressão th:replace="cabecalho :: head" dentro da div
-é uma diretiva do Thymeleaf (pacote do start spring io) que indica a substituição
-do conteúdo da div pelo fragmento de template chamado "cabecalho" na seção "head".
-
-Essa sintaxe é usada para reutilizar partes de um template em outros templates,
-promovendo a modularidade e a manutenção do código.
-O Thymeleaf permite definir fragmentos de template em arquivos separados
-e incluí-los ou substituí-los em outros templates conforme necessário.
-
--->
-
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
@@ -29,7 +16,7 @@ e incluí-los ou substituí-los em outros templates conforme necessário.
 			<div>
 				<a th:href="@{/users/form}" th:object="${user}" class="btn btn-primary btn-sm mb-3 float-right"> Adicionar
 					Usuario </a>
-				<a style="margin-right:20px" th:href="@{/}" class="btn btn-primary btn-sm mb-3 float-right"> Home
+				<a style="margin-right:20px" th:href="@{/}" class="btn btn-success btn-sm mb-3 float-right"> Home
 					Page </a>	
 			</div>
 			<table class="table table-striped table-responsive-md">

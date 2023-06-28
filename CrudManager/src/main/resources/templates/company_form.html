@@ -38,7 +38,7 @@
 			
 			<!-- Qdo insere com os dados vazios nao carrega! --> 
 			<select class="form-control mb-4 col-4" id="spId" name="spId">
-    			<option value="0">Selecione uma prestadora</option>
+    			<option value="0">Selecione uma prestadora de servicos</option>
     			<option th:each="sp : ${serviceProviders}" th:value="${sp.id}" th:text="${sp.name}"></option>
 			</select>
 					

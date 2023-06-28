@@ -37,8 +37,6 @@ public class CompanyController {
 		List<Company> companies = companyRepository.findAll();
 		model.addAttribute("companies", companies);
 		
-		//o retorno de um metodo (spring) eh a pagina que é redirecionada
-		//eh um .html
 		return "indexCompany";
 	}
 	
@@ -72,14 +70,6 @@ public class CompanyController {
 
 	}
 	
-	/*
-	@PostMapping("/companies/new")
-	public String companyNew(@ModelAttribute Company company) {
-		
-		companyRepository.save(company);
-		
-		return "redirect:/companies";
-	}*/
 	
 	@GetMapping("/companies/update{id}")
 	public String userUpdate(@PathVariable("id")
@@ -91,10 +81,7 @@ public class CompanyController {
 			//gera erro
 			
 		}
-		
-		//List<ServiceProvider> sp = serviceProviderRepository.findAll();
-		//model.addAttribute("sp", sp);
-		
+			
 		Company company = optCompany.get();
 		
 		model.addAttribute("company", company);

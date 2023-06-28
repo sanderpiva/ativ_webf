@@ -24,7 +24,7 @@ public class ServiceProvider {
 	@NotBlank(message = "email não pode estar vazio")
 	@Email(message = "email invalido")
 	private String email;
-	@NotBlank(message = "phone não pode estar vazio")
+	@NotBlank(message = "telefone não pode estar vazio")
 	private String phone;
 	@NotBlank(message = "endereco não pode estar vazio")
 	private String address;

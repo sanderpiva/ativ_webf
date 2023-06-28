@@ -8,25 +8,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
-
-
-/*
-@Entity: Essa anotação indica que a classe User é uma entidade persistente.
-Ela é usada pelo Hibernate (framework usado para fazer o crud: banco dados)
-para reconhecer que essa classe deve ser mapeada para uma tabela no banco de dados.
-
-@Table(name = "usuarios"): Essa anotação especifica o nome da tabela 
-no banco de dados em que a entidade User será armazenada. No caso, o nome da tabela é "usuarios".
-
-@Id: Essa anotação indica que o atributo id é a chave primária da tabela. 
-O Hibernate utilizará esse atributo para identificar de forma única cada registro da tabela.
-
-@GeneratedValue(strategy = GenerationType.AUTO): 
-Essa anotação define a estratégia de geração de valores para a chave primária. 
-Nesse caso, está sendo utilizada a estratégia "AUTO", 
-que permite que o banco de dados determine automaticamente o valor da chave primária ao inserir um novo registro.
- */
-
 @Entity
 @Table(name = "usuarios")
 public class User {

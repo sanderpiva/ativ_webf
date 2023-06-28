@@ -31,8 +31,6 @@ public class ServiceProviderController {
 		List<ServiceProvider> serviceProviders = serviceProviderRepository.findAll();
 		model.addAttribute("serviceProviders", serviceProviders);
 
-		//o retorno de um metodo (spring) eh a pagina que é redirecionada
-		//eh um .html
 		return "indexServiceProvider";
 	}
 
