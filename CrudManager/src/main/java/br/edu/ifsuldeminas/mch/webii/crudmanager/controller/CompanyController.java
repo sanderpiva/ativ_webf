@@ -5,8 +5,6 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -94,11 +92,18 @@ public class CompanyController {
 			
 		}
 		
+		//List<ServiceProvider> sp = serviceProviderRepository.findAll();
+		//model.addAttribute("sp", sp);
+		
 		Company company = optCompany.get();
 		
 		model.addAttribute("company", company);
 		
+		List<ServiceProvider> sp = serviceProviderRepository.findAll();
+		model.addAttribute("sp", sp);
+		
 		return "company_form";
+		
 	}
 	
 	

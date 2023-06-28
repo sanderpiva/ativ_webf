@@ -4,7 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -24,7 +26,9 @@ public class Company {
 	@NotBlank(message = "telefone não pode estar vazio")
 	private String phone;
 	
-	@OneToOne(optional=false)
+	
+	@ManyToOne
+    @JoinColumn(name="company_id", nullable = false)
 	private ServiceProvider serviceProvider;
 	
 	public ServiceProvider getServiceProvider() {

@@ -33,13 +33,10 @@
 			
 			<span th:if="${#fields.hasErrors('phone')}"
 			th:errors="*{phone}" class="text-danger">
-			</span>
+			</span>	
 			<input type="text" th:field="*{phone}" placeholder="Telefone" class="form-control mb-4 col-4">
 			
-			<!-- 
-			<input type="text" th:field="*{serviceProvider.name}" placeholder="Cadastro Novo, não insira Prestadora" class="form-control mb-4 col-4">
-			-->
-			
+			<!-- Qdo insere com os dados vazios nao carrega! --> 
 			<select class="form-control mb-4 col-4" id="spId" name="spId">
     			<option value="0">Selecione uma prestadora</option>
     			<option th:each="sp : ${serviceProviders}" th:value="${sp.id}" th:text="${sp.name}"></option>
