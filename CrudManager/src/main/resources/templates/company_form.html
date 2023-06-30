@@ -36,7 +36,9 @@
 			</span>	
 			<input type="text" th:field="*{phone}" placeholder="Telefone" class="form-control mb-4 col-4">
 			
-			<!-- Qdo insere com os dados vazios nao carrega! --> 
+		
+			<!-- NAO CONSEGUI POR A VALIDAÇÃO AQUI! -->		
+			 
 			<select class="form-control mb-4 col-4" id="spId" name="spId">
     			<option value="0">Selecione uma prestadora de servicos</option>
     			<option th:each="sp : ${serviceProviders}" th:value="${sp.id}" th:text="${sp.name}"></option>

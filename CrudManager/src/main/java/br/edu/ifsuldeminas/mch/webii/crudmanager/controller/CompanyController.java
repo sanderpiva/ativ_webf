@@ -55,9 +55,11 @@ public class CompanyController {
 	public String companyNew(@Valid
 			@ModelAttribute Company company, 
 			BindingResult bidinBindingResult, 
-			@RequestParam("spId")int id) {
+			@RequestParam("spId")int id, Model model) {
 		
 		if(bidinBindingResult.hasErrors()) {
+			List<ServiceProvider> serviceProviders = serviceProviderRepository.findAll();
+			model.addAttribute("serviceProviders", serviceProviders);
 			
 			return "company_form";
 		}
@@ -72,7 +74,7 @@ public class CompanyController {
 	
 	
 	@GetMapping("/companies/update{id}")
-	public String userUpdate(@PathVariable("id")
+	public String companyUpdate(@PathVariable("id")
 			Integer id, Model model) {
 		
 		Optional<Company> optCompany  = companyRepository.findById(id);
@@ -83,11 +85,10 @@ public class CompanyController {
 		}
 			
 		Company company = optCompany.get();
-		
+		List<ServiceProvider> serviceProviders = serviceProviderRepository.findAll();
+		model.addAttribute("serviceProviders", serviceProviders);
 		model.addAttribute("company", company);
 		
-		List<ServiceProvider> sp = serviceProviderRepository.findAll();
-		model.addAttribute("sp", sp);
 		
 		return "company_form";
 		
